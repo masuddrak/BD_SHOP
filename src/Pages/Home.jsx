@@ -17,6 +17,10 @@ const Home = () => {
             <div className="mt-2">
                 <FlashContainer></FlashContainer>
             </div>
+            {/*  */}
+            <div>
+                <h1>hello</h1>
+            </div>
         </div>
     );
 };

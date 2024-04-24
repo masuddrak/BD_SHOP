@@ -6,6 +6,7 @@ import { BsPerson } from "react-icons/bs";
 const Header = () => {
     const navlinks = <>
         <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/addProduct">Add Product</NavLink></li>
         <li><NavLink to="/about">About</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
     </>
@@ -32,7 +33,7 @@ const Header = () => {
                     <div className="flex gap-3 items-center text-sm">
                         <button className="flex"><BsPerson className="text-xl font-bold"></BsPerson>Login</button>
                         <div className="border border-1 h-2"></div>
-                        <button>Sing Up</button>
+                        <Link to="/register">Sing Up</Link>
                         <button className="text-2xl"><FiShoppingCart></FiShoppingCart></button>
                     </div>
                 </div>

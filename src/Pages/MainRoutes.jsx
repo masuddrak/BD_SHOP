@@ -5,6 +5,9 @@ import {
   import Home from '../Pages/Home';
   import Contact from '../Pages/Contact';
   import About from '../Pages/About';
+import Register from "../components/Register";
+import AddProduct from "./AddProduct";
+import BestProdoctDetails from "../components/BestProdoctDetails";
 
     const router = createBrowserRouter([
         {
@@ -16,13 +19,26 @@ import {
               element:<Home></Home>
             },
             {
+              path:"/addProduct",
+              element:<AddProduct></AddProduct>
+            },
+            {
+              path:"/bestProductDetails/:id",
+              element:<BestProdoctDetails></BestProdoctDetails>,
+              loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
+            },
+            {
               path:"/about",
               element:<About></About>
             },
             {
               path:"/contact",
               element:<Contact></Contact>
-            }
+            },
+            {
+              path:"/register",
+              element:<Register></Register>
+            },
           ]
         },
       ]);
