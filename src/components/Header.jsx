@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { FiShoppingCart } from "react-icons/fi";
+import { BsPerson } from "react-icons/bs";
 
 
 const Header = () => {
@@ -29,7 +30,7 @@ const Header = () => {
                 </div>
                 <div className="navbar-end">
                     <div className="flex gap-3 items-center text-sm">
-                        <button>Login</button>
+                        <button className="flex"><BsPerson className="text-xl font-bold"></BsPerson>Login</button>
                         <div className="border border-1 h-2"></div>
                         <button>Sing Up</button>
                         <button className="text-2xl"><FiShoppingCart></FiShoppingCart></button>
