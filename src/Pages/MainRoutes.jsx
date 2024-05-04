@@ -8,6 +8,8 @@ import {
 import Register from "../components/Register";
 import AddProduct from "./AddProduct";
 import BestProdoctDetails from "../components/BestProdoctDetails";
+import Login from "../components/Login";
+import PrivateRoute from "../authProvider/PrivateRoute";
 
     const router = createBrowserRouter([
         {
@@ -20,7 +22,7 @@ import BestProdoctDetails from "../components/BestProdoctDetails";
             },
             {
               path:"/addProduct",
-              element:<AddProduct></AddProduct>
+              element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
             },
             {
               path:"/bestProductDetails/:id",
@@ -38,6 +40,10 @@ import BestProdoctDetails from "../components/BestProdoctDetails";
             {
               path:"/register",
               element:<Register></Register>
+            },
+            {
+              path:"/login",
+              element:<Login></Login>
             },
           ]
         },

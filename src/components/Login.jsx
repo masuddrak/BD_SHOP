@@ -2,32 +2,27 @@ import { useContext } from "react";
 import { authContext } from "../authProvider/AuthProvider";
 import { Link } from "react-router-dom";
 
-const Register = () => {
-    const { createUser } = useContext(authContext)
-    const handelRegister = (e) => {
+const Login = () => {
+    const { loginUser } = useContext(authContext)
+    const HandelForm = (e) => {
         e.preventDefault()
         const form = e.target
-        const name = form.name.value
         const email = form.email.value
         const password = form.password.value
-        createUser(email, password)
+        loginUser(email, password)
             .then(result => {
                 console.log(result.user)
             })
             .catch(error => {
                 console.log(error)
             })
-        console.log(name, email, password)
+        console.log(email, password)
     }
     return (
         <div className="flex justify-center">
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
-                <h1 className="text-2xl font-bold text-center">Register Now</h1>
-                <form onSubmit={handelRegister} noValidate="" action="" className="space-y-6">
-                    <div className="space-y-1 text-sm">
-                        <label htmlFor="name" className="block dark:text-gray-600">Name</label>
-                        <input type="text" name="name" placeholder="Name" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
-                    </div>
+                <h1 className="text-2xl font-bold text-center">Login Now!</h1>
+                <form onSubmit={HandelForm} noValidate="" action="" className="space-y-6">
                     <div className="space-y-1 text-sm">
                         <label htmlFor="username" className="block dark:text-gray-600">Email</label>
                         <input type="email" name="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
@@ -61,11 +56,11 @@ const Register = () => {
                     </button>
                 </div>
                 <p className="text-xs text-center sm:px-6 dark:text-gray-600">Don`t have an account?
-                    <Link to="/login" rel="noopener noreferrer" href="#" className="underline dark:text-gray-800">Sign up</Link>
+                    <Link to="/register" rel="noopener noreferrer" href="#" className="underline dark:text-gray-800">Sign up</Link>
                 </p>
             </div>
         </div>
     );
 };
 
-export default Register;
+export default Login;

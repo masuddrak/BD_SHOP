@@ -18,7 +18,7 @@ const Home = () => {
                 <FlashContainer></FlashContainer>
             </div>
             {/*  */}
-            <div>
+            <div className="mt-10">
                 <h1>hello</h1>
             </div>
         </div>
